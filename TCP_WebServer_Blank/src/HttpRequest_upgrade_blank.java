@@ -161,7 +161,11 @@ final class HttpRequest_upgrade_blank implements Runnable {
     	switch (code) {
     	case OK:
     		contentTypeLine += contentType(this.requestedFile.getName()) + CRLF;
-    		contentTypeLine += contentLength + "1024" + CRLF;
+			if (Objects.equals(contentType(this.requestedFile.getName()), contentType("notARealFile.jpg"))) {
+				contentTypeLine += contentLength + requestedFile.length() + CRLF;
+			} else {
+				contentTypeLine += contentLength + "1024" + CRLF;
+			}
     		
     		break;
     	default:
@@ -189,7 +193,7 @@ final class HttpRequest_upgrade_blank implements Runnable {
 
         //Modify to your path
 //        fileName = "." + fileName ;
-        fileName = "C:\\Users\\MAIN-Pen\\eclipse-workspace\\TCP_WebServer\\src" + fileName;
+        fileName = "C:\\Users\\Drew\\Downloads\\project1-WebServer\\TCP_Web server_Blank\\TCP_WebServer_Blank\\src" + fileName;
         File file = new File(fileName);
         
         if(!file.exists()) {
