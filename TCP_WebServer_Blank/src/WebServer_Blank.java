@@ -1,10 +1,9 @@
 import java.io.* ;
 import java.net.* ;
-import java.net.http.HttpRequest;
 import java.util.* ;
 
 public final class WebServer_Blank {
-    public static void main(String argv[]) throws Exception {
+    public static void main(String[] argv) throws Exception {
     	
     	try {
     		// Could get the port number from the command line.

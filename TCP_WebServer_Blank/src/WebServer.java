@@ -18,7 +18,7 @@ public final class WebServer {
     			Socket socket = serversocket.accept();
     		    
     		    // Construct an object to process the HTTP request message.
-    		    HttpRequest_upgrade request = new HttpRequest_upgrade(socket);
+    		    HttpRequest_upgrade_blank request = new HttpRequest_upgrade_blank(socket);
     		    
     		    // Create a new thread to process the request.
     		    Thread thread = new Thread(request);    		    
