@@ -204,10 +204,8 @@ final class HttpRequest_upgrade_blank implements Runnable {
         if(file.isDirectory()) {
         	File[] list = file.listFiles(new FilenameFilter() {
         		public boolean accept(File dir, String f) {
-        			if(f.equalsIgnoreCase("index.html"))
-        				return true;
-        			return false;
-        		}
+                    return f.equalsIgnoreCase("index.html");
+                }
         	});
         	if(list == null || list.length == 0) {
         		code = StatusCode.NOT_FOUND;
